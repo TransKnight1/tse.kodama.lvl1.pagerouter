@@ -1,7 +1,7 @@
-import { HomeMovieslist } from "@/pages/components/movie.grid.home";
 import { MovieCard } from "@/pages/components/movie.card";
+import { TopRatedMovieslist } from "./components/movie.grid.top.rated";
 import { Sidebar } from "./components/sidebar";
-export default function Home() {
+export default function TopRated() {
 	return (
 		<div className='h-screen flex flex-col'>
 			{/* Logo feito apenas com fonte Pacifico importada do google*/}
@@ -14,7 +14,7 @@ export default function Home() {
 				<main className=''>
 					{/* Movieslist acessa todas informações, rendezirando os critérios escolhidos e o MovieCard renderiza a imagem do poster dos primeiros 20 resultados */}
 					<div className='mt-4 ml-4 mr-4'>
-						<HomeMovieslist />
+						<TopRatedMovieslist />
 					</div>
 				</main>
 			</div>

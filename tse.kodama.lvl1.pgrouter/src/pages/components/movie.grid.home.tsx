@@ -2,17 +2,10 @@ import { useEffect, useState } from "react";
 import { MovieDb } from "moviedb-promise";
 import React from "react";
 import { API_KEYS } from "../../../ApiKeys/apikeys";
-import { MovieCard } from "../components/movie.card";
+import { MovieCard } from "./movie.card";
+import { MovieResult } from "moviedb-promise";
 
-type MovieResult = {
-	id: number; // Make id required
-	poster_path: string;
-	title: string;
-	popularity: number;
-	// Add other properties
-};
-
-const Movieslist = () => {
+const HomeMovieslist = () => {
 	const [moviesListData, setMoviesListData] = useState<MovieResult[]>([]);
 
 	useEffect(() => {
@@ -36,17 +29,18 @@ const Movieslist = () => {
 	}, []);
 
 	return (
-		<div className=' grid grid-cols-2 hover:grid-flow-row md:grid-cols-4 gap-2 max-w-screen-lg '>
+		<div className=' grid grid-cols-5 md:grid-cols-5 gap-4 max-w-screen-xlg '>
 			{moviesListData.map((movie) => (
 				<MovieCard
 					key={movie.id}
-					image={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+					poster_path={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
 					title={movie.title}
 					popularity={movie.popularity}
+					media_type='movie'
 				/>
 			))}
 		</div>
 	);
 };
 
-export { Movieslist };
+export { HomeMovieslist };
