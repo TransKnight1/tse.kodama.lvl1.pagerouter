@@ -36,7 +36,6 @@ const TopRatedMovieslist = () => {
 					poster_path={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
 					title={movie.title}
 					popularity={movie.popularity}
-					media_type='movie'
 				/>
 			))}
 		</div>

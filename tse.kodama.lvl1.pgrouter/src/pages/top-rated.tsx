@@ -1,4 +1,3 @@
-import { MovieCard } from "@/pages/components/movie.card";
 import { TopRatedMovieslist } from "./components/movie.grid.top.rated";
 import { Sidebar } from "./components/sidebar";
 export default function TopRated() {

@@ -1,5 +1,4 @@
 import { HomeMovieslist } from "@/pages/components/movie.grid.home";
-import { MovieCard } from "@/pages/components/movie.card";
 import { Sidebar } from "./components/sidebar";
 export default function Home() {
 	return (
