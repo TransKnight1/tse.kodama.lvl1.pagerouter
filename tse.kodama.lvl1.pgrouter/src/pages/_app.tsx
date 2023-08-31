@@ -1,22 +1,28 @@
+/* adição de cores customizadas dentro do tailwind, e fonte do google para criar a logo
+aqui o esqueleto visual de todas as paginas do site está definido.*/
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { UpperBar } from "./components/upper.bar";
+import { UpperBar } from "./components/UpperBar";
+import YourMovieLogo from "./components/YourMovieLogo";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<div className='h-screen flex flex-col'>
-			{/* Logo feito apenas com fonte Pacifico importada do google*/}
 			<div>
-				<div className='sticky top-0 w-full h-12 bg-LaranjaCorpo text-center border-b-2 font-Pacifico text-3xl'>
-					Your Movie
-				</div>
+				{/* logo feito apenas com fonte Pacifico importada do Google */}
+				<YourMovieLogo />
 				<div>
+					<Head>
+						<link rel='shortcut icon' href='/' />
+					</Head>
+					{/* Upper Bar em rosa com quatro botões de navegação */}
 					<UpperBar />
 				</div>
 			</div>
 			<div className='flex flex-1 top-fit bg-LaranjaCorpo'>
 				<main className=''>
-					{/* Movieslist acessa todas informações, rendezirando os critérios escolhidos e o MovieCard renderiza a imagem do poster dos primeiros 20 resultados */}
+					{/* Componente principal */}
 					<div className=''>
 						<Component {...pageProps} />
 					</div>
